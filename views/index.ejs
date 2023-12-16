@@ -13,11 +13,16 @@
     <nav>
         <a href="/fruits/new">Create a New Fruit</a>
     </nav>
-    
+
     <ul>
     <% for (let i = 0; i < fruits.length; i++){ %>
 
         <a href="/fruits/<%= i %>"><li><%= fruits[i].name %></li></a>
+
+        <!-- when you click on delete button on index page in broswer, the form will be submitted to /fruits/:id but since we mentioned method=DELTE, this will go to DELETE route and not SHOW route -->
+        <form action="/fruits/<%= i %>?_method=DELETE" method="post">
+            <input type="submit" value="delete">
+        </form>
 
     <% } %>
     </ul>
