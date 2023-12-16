@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Fruit</title>
+    <%- include("./cssjs.ejs") %>
+</head>
+<body>
+    <h1>New Fruit Page</h1>
+    
+    <!-- 'action' tells the server which url should the form submission go to (that is,the 'CREATE' RESTful route)  -->
+    <form action="/fruits" method="post">
+        <label>Name: <input type="text" name="name"></label>
+        <label>Color: <input type="text" name="color"></label>
+        <!-- checkbox for reasyToEat bceuase it takes a boolean value, and input to a boolean field is usually a checkbox like a yes or no -->
+        <label>Ready To Eat: <input type="checkbox" name="readyToEat"></label>
+        <input type="submit" value="Create Fruit">
+    </form>
+    
+</body>
+</html>
